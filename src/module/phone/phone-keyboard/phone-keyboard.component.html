@@ -1,0 +1,27 @@
+
+
+<div>
+  <div>{{current}}</div>
+
+  <button class="btn"
+    *ngFor="let btn of buttons"
+    (click)="clickTo(btn)">
+    {{btn}}
+  </button>
+
+  <div>
+    <button class="btn" (click)="clearAll()">Supprimer</button>
+    <button class="btn" (click)="deleteLastOne()">Effacer</button>
+  </div>
+
+  <div>
+    <button class="btn" (click)="called()">Call</button>
+
+  </div>
+
+
+
+
+</div>
+
+

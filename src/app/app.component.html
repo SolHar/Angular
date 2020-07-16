@@ -1,0 +1,38 @@
+<!-- <h2>---------------- Introduction composant ----------------- </h2> -->
+<!--Insérer le "composant title" du app.components.ts-->
+<!-- <h1>Ma 1ère App Angular : {{title}}</h1> -->
+
+<!-- N'affiche que [objet Objet] -->
+<!-- <p>{{meta}}</p> -->
+
+<!-- Applique le ToString() (grace au json) -->
+<!-- <p>{{meta | json}}</p> -->
+
+<!-- Affiche la valeur de la propriété description-->
+<!-- <p>{{meta.description}}  {{'Page :' + (meta.page+1) }}</p> -->
+
+<!-- <p>{{maMethode()}}</p> -->
+<router-outlet></router-outlet>
+
+
+<!-- Event Js avec application d'une méthode -->
+<!-- <a (click)="pagination()">Pagination</a> -->
+
+
+<!-- modifier dynamiquement le HTML-->
+<!-- <div *ngIf="meta.page === 2"> Création de la div à Page2</div> -->
+
+<!--
+  {{}} =>Interpolation
+  | => Transforme
+  () => Event /out
+  [] => Propriétés /in
+  * => Directive Structurelle
+  # => Variable locale
+
+-->
+<!-- <h2>---------------- Création d'un composant ----------------- </h2> -->
+
+<!-- <div *ngIf="phoneNumber">Numero : {{phoneNumber}} </div> -->
+<!-- <button (click)="phoneNumber = '000'">000</button> -->
+<!-- <app-phone-keyboard [(current)]="phoneNumber"></app-phone-keyboard> -->
