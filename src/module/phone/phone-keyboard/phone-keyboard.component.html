@@ -1,27 +1,27 @@
-
-
-<div>
-  <div>{{current}}</div>
-
-  <button class="btn"
+<div class="container">
+  <div>{{ current }}</div>
+</div>
+<div class="container">
+  <button
+    class="btn btn-info"
     *ngFor="let btn of buttons"
-    (click)="clickTo(btn)">
-    {{btn}}
+    (click)="clickTo(btn)"
+  >
+    {{ btn }}
   </button>
-
-  <div>
-    <button class="btn" (click)="clearAll()">Supprimer</button>
-    <button class="btn" (click)="deleteLastOne()">Effacer</button>
-  </div>
-
-  <div>
-    <button class="btn" (click)="called()">Call</button>
-
-  </div>
-
-
-
-
+</div>
+<div>
+  <button class="btn" (click)="clearAll()">Supprimer</button>
+  <button class="btn" (click)="deleteLastOne()">Effacer</button>
 </div>
 
+<!-- <div>
+    <button class="btn" (click)="called()">
+    </button>
 
+  </div> -->
+
+<app-button
+  [icons]="['fas', 'fa-phone']"
+  (myClick)="called()"
+></app-button>

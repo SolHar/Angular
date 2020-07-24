@@ -9,7 +9,7 @@ import { AgendaService } from '../../../services/agenda.service';
 })
 export class PhoneKeyboardComponent implements OnInit{
 
-  buttons = [0,1,2,3,4,5,6,7,8,9];
+  buttons = [1,2,3,4,5,6,7,8,9,'*', 0,'#'];
   @Input()current = '';
 
   @Output() currentChange = new EventEmitter<string>();

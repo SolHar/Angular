@@ -12,5 +12,5 @@ export class PhoneComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  phoneNumber = '0606060606';
+  phoneNumber = '';
 }

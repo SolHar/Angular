@@ -1,0 +1,60 @@
+<div class="container" *ngIf="contact$ | async">
+  <form [formGroup]="form" (ngSubmit)="updateContact()">
+    <div class="form-group">
+      <label class="font-weight-bold">Name</label>
+      <input
+        type="text"
+        class="form-control text-info"
+        placeholder="Name"
+        formControlName="name"
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="font-weight-bold">Organisation</label>
+      <input
+        type="text"
+        class="form-control text-info"
+        placeholder="Organisation"
+        formControlName="organization"
+      />
+    </div>
+
+    <div class="form-group">
+      <label class="font-weight-bold">Phone</label>
+      <input
+        type="tel"
+        class="form-control text-info"
+        placeholder="Phone"
+        formControlName="phone"
+      />
+      <ng-container *ngIf="form.get('phone').errors as errors">
+        <div class="text-danger" *ngIf="errors.required">Phone is required</div>
+        <div class="text-danger" *ngIf="errors.phone">Phone is not valid</div>
+      </ng-container>
+    </div>
+
+    <div class="form-group form-check">
+      <input
+        type="checkbox"
+        class="form-check-input"
+        id="favoris"
+        placeholder="Favoris"
+        formControlName="favorite"
+      />
+      <label class="form-check-label" for="favoris">Favoris</label>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-outline-info float-right">
+        <i class="fas fa-check save-button"></i>
+      </button>
+    </div>
+
+    <div>
+      <button type="submit" class="btn btn-outline-dark float-right btn-back">
+        <i class="fas fa-long-arrow-alt-left back-button"></i>
+      </button>
+    </div>
+  </form>
+</div>

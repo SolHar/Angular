@@ -12,12 +12,9 @@
 <!-- <p>{{meta.description}}  {{'Page :' + (meta.page+1) }}</p> -->
 
 <!-- <p>{{maMethode()}}</p> -->
-<router-outlet></router-outlet>
-
 
 <!-- Event Js avec application d'une méthode -->
 <!-- <a (click)="pagination()">Pagination</a> -->
-
 
 <!-- modifier dynamiquement le HTML-->
 <!-- <div *ngIf="meta.page === 2"> Création de la div à Page2</div> -->
@@ -36,3 +33,26 @@
 <!-- <div *ngIf="phoneNumber">Numero : {{phoneNumber}} </div> -->
 <!-- <button (click)="phoneNumber = '000'">000</button> -->
 <!-- <app-phone-keyboard [(current)]="phoneNumber"></app-phone-keyboard> -->
+
+<router-outlet></router-outlet>
+
+<div
+  style="background-color: white;"
+  class="d-flex justify-content-center btn-group btn-group-toggle fixed-bottom btn-choose"
+>
+  <!-- création dynamique des liens de navigation -->
+  <button
+    class="btn btn-outline-info "
+    *ngFor="let rout of RoutesLink"
+    routerLink="{{ rout }}"
+    routerLinkActive="active"
+  >
+    <span class="text-capitalize">{{ rout }}</span>
+  </button>
+</div>
+
+<!-- création des liens de navigation à la mano !
+
+<button routerLink="phone" routerLinkActive="active">Phone</button>
+<button routerLink="contact" routerLinkActive="active">Contacts</button>
+<button routerLink="favoris" routerLinkActive="active">Favoris</button> -->

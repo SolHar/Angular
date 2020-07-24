@@ -9,7 +9,8 @@ const routes: Routes = [
     //une Route = une page = une url
     path : 'phone',
     //charger un sous module
-    loadChildren:() => import('../module/phone/phone.module').then(m =>m.PhoneModule)
+    loadChildren:() => import('../module/phone/phone.module').then(m =>m.PhoneModule),
+
   },
   {
     path : 'contact',
@@ -17,10 +18,13 @@ const routes: Routes = [
   },
 
   {
-  path : 'favoris',
-  loadChildren:() => import('../module/favoris/favoris.module').then(m =>m.FavorisModule)
+    path : 'favoris',
+    loadChildren:() => import('../module/favoris/favoris.module').then(m =>m.FavorisModule)
   },
 
+
+
+  // Permet la redirection, page par default dans cet exemple.
   {
     path : '',
     redirectTo : '/phone',

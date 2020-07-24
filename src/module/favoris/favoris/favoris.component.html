@@ -1,1 +1,13 @@
 <p>favoris works!</p>
+
+<ul>
+  <ng-container *ngFor="let contact of favorites$ | async">
+    <li *ngIf="contact.favorite">
+        <div>{{contact.name}}</div>
+    </li>
+  </ng-container>
+</ul>
+
+
+<router-outlet></router-outlet>
+

@@ -1,0 +1,21 @@
+<p>newcontact works!</p>
+
+<div class="container">
+  <form [formGroup]="addForm" (ngSubmit)="addContact()">
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name" />
+    </div>
+    <div class="form-group">
+      <label for="phone">Phone</label>
+      <input type="tel" class="form-control" formControlName="phone" />
+      <ng-container *ngIf="addForm.get('phone').errors as errors">
+        <div class="text-danger" *ngIf="errors.required">Phone is required</div>
+        <div class="text-danger" *ngIf="errors.phone">Phone is not valid</div>
+      </ng-container>
+    </div>
+    <div>
+      <button type="submit" class="btn btn-info float-right">Add</button>
+    </div>
+  </form>
+</div>

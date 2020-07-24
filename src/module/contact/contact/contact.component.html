@@ -1,1 +1,48 @@
-<p>contact works!</p>
+<div class="container-contact">
+<div class="input-group">
+  <div class="input-group-prepend">
+    <span class="input-group-text">
+      <i class="fas fa-search text-info"></i>
+    </span>
+  </div>
+  <input
+    type="text"
+    class="form-control"
+    [ngModel]="defaultFilterName"
+    (ngModelChange)="filterByName($event)"
+  />
+</div>
+<div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let contact of contacts$ | async"
+    appChangeIconFontsizeWhenHover
+    >
+
+      <h6 class="font-weight-bold">{{ contact | contactName }}</h6>
+      <!--Delete contact Id-->
+      <a class="btn btn-link float-right" (click)="deleteItem(contact)">
+        <i class="fas fa-trash-alt text-info"></i>
+      </a>
+      <a class="btn btn-link float-right" [routerLink]="contact.id">
+        <i class="far fa-eye text-info"></i>
+      </a>
+      <a class="btn btn-link float-right" [routerLink]="contact.id">
+        <i class="fas fa-phone text-info"></i>
+      </a>
+
+      <!-- <p class="font-weight-light">{{ contact.phone }}</p> -->
+    </li>
+  </ul>
+</div>
+</div>
+<!-- <div style="padding: 5%;" >
+  <button class="btn btn-info btn-block" routerLink="new">
+    <i class="fas fa-user-plus"></i>
+  </button>
+</div> -->
+<app-button
+  [icons]="['fas', 'fa-user-plus']"
+  (myClick)="goToNew()"
+></app-button>
+
+<router-outlet></router-outlet>
